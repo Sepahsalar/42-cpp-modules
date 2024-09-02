@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:30 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/02 16:43:41 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:55:53 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,24 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <sstream>
 
-class PhoneBook {
-public:
-    PhoneBook();
-	~PhoneBook();
-    void addContact(const Contact& contact);
-    void displayContacts() const;
-    void displayContact(int index) const;
+class PhoneBook
+{
+	public:
+		PhoneBook();
+		~PhoneBook();
 
-private:
-    Contact contacts[8];
-    int current_index;
-    int total_contacts;
+		void add_contact();
+		void display_contacts() const;
+		void display_contact(int index) const;
 
-    std::string truncate(const std::string& str) const;
+	private:
+		Contact	contacts[8];
+		int		current_index;
+		int		total_contacts;
+
+		std::string truncate(const std::string &str) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 10:46:20 by asohrabi          #+#    #+#              #
-#    Updated: 2024/09/02 16:45:48 by asohrabi         ###   ########.fr        #
+#    Updated: 2024/09/02 19:06:57 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FUNCS =  Contact.cpp PhoneBook.cpp main.cpp
 
 OBJS = ${FUNCS:.cpp=.o}
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++11
 
 %.o: %.cpp
 	@c++ ${CFLAGS} -c $< -o $@
