@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:30 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/02 18:55:53 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:23:19 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 
-		void add_contact();
-		void display_contacts() const;
-		void display_contact(int index) const;
+		void addContact();
+		void displayContacts() const;
+		void displayContact(int index) const;
 
 	private:
-		Contact	contacts[8];
-		int		current_index;
-		int		total_contacts;
+		Contact	_contacts[8];
+		int		_currentIndex;
+		int		_totalContacts;
 
-		std::string truncate(const std::string &str) const;
+		std::string _truncate(const std::string &str) const;
 };
 
 #endif

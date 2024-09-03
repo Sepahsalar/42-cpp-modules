@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:41:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/02 18:27:53 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:23:01 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main()
 	{
 		std::getline(std::cin, command);
 		if (command == "ADD")
-			phonebook.add_contact();
+			phonebook.addContact();
 		else if (command == "SEARCH")
-			phonebook.display_contacts();
+			phonebook.displayContacts();
 		else if (command == "EXIT")
 			break;
 	}

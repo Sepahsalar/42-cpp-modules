@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:51 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/02 19:06:37 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:23:19 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : current_index(0), total_contacts(0) {}
+PhoneBook::PhoneBook() : _currentIndex(0), _totalContacts(0) {}
 
 PhoneBook::~PhoneBook() {}
 
@@ -31,7 +31,7 @@ std::string get_valid_input(const std::string &prompt)
 	}
 }
 
-void PhoneBook::add_contact()
+void PhoneBook::addContact()
 {
 	std::string first_name = get_valid_input("Enter First Name: ");
     std::string last_name = get_valid_input("Enter Last Name: ");
@@ -40,13 +40,13 @@ void PhoneBook::add_contact()
     std::string darkest_secret = get_valid_input("Enter Darkest Secret: ");
 
 	Contact new_contact(first_name, last_name, nickname, phone_number, darkest_secret);
-	contacts[current_index] = new_contact;
-	current_index = (current_index + 1) % 8;
-	if (total_contacts < 8)
-		total_contacts++;
+	_contacts[_currentIndex] = new_contact;
+	_currentIndex = (_currentIndex + 1) % 8;
+	if (_totalContacts < 8)
+		_totalContacts++;
 }
 
-void PhoneBook::display_contacts() const
+void PhoneBook::displayContacts() const
 {
 	int			index;
 	std::string	input;
@@ -57,14 +57,14 @@ void PhoneBook::display_contacts() const
 			<< std::setw(10) << "Last Name" << "|"
 			<< std::setw(10) << "Nickname" << "|" << std::endl;
 	std::cout << std::string(45, '-') << std::endl;
-	for (index = 0; index < total_contacts; index++)
+	for (index = 0; index < _totalContacts; index++)
 	{
 		std::cout << "|" << std::setw(10) << index + 1 << "|"
-				<< std::setw(10) << truncate(contacts[index].get_first_name()) << "|"
-				<< std::setw(10) << truncate(contacts[index].get_last_name()) << "|"
-				<< std::setw(10) << truncate(contacts[index].get_nickname()) << "|" << std::endl;
+				<< std::setw(10) << _truncate(_contacts[index].get_first_name()) << "|"
+				<< std::setw(10) << _truncate(_contacts[index].get_last_name()) << "|"
+				<< std::setw(10) << _truncate(_contacts[index].get_nickname()) << "|" << std::endl;
 	}
-	if (total_contacts > 0)
+	if (_totalContacts > 0)
 	{
 		std::cout << "Enter the index of the contact to display: ";
 		std::getline(std::cin, input);
@@ -78,23 +78,23 @@ void PhoneBook::display_contacts() const
         }
 		std::stringstream ss(input);
 		if (valid && ss >> index && ss.eof()
-			&& index > 0 && index <= total_contacts)
-            display_contact(index - 1);
+			&& index > 0 && index <= _totalContacts)
+            displayContact(index - 1);
         else
             std::cout << "Error: Invalid index." << std::endl;
 	}
 }
 
-void PhoneBook::display_contact(int index) const
+void PhoneBook::displayContact(int index) const
 {
-	std::cout << "First Name: " << contacts[index].get_first_name() << std::endl
-			<< "Last Name: " << contacts[index].get_last_name() << std::endl
-			<< "Nickname: " << contacts[index].get_nickname() << std::endl
-			<< "Phone Number: " << contacts[index].get_phone_number() << std::endl
-			<< "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
+	std::cout << "First Name: " << _contacts[index].get_first_name() << std::endl
+			<< "Last Name: " << _contacts[index].get_last_name() << std::endl
+			<< "Nickname: " << _contacts[index].get_nickname() << std::endl
+			<< "Phone Number: " << _contacts[index].get_phone_number() << std::endl
+			<< "Darkest Secret: " << _contacts[index].get_darkest_secret() << std::endl;
 }
 
-std::string PhoneBook::truncate(const std::string &str) const
+std::string PhoneBook::_truncate(const std::string &str) const
 {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
