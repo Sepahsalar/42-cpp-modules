@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:51 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/03 13:23:19 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:05:26 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string get_valid_input(const std::string &prompt)
 	}
 }
 
-void PhoneBook::addContact()
+void PhoneBook::add()
 {
 	std::string first_name = get_valid_input("Enter First Name: ");
     std::string last_name = get_valid_input("Enter Last Name: ");
@@ -46,7 +46,7 @@ void PhoneBook::addContact()
 		_totalContacts++;
 }
 
-void PhoneBook::displayContacts() const
+void PhoneBook::search() const
 {
 	int			index;
 	std::string	input;

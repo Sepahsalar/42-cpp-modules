@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:41:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/03 13:23:01 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:09:47 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main()
 	{
 		std::getline(std::cin, command);
 		if (command == "ADD")
-			phonebook.addContact();
+			phonebook.add();
 		else if (command == "SEARCH")
-			phonebook.displayContacts();
+			phonebook.search();
 		else if (command == "EXIT")
 			break;
 	}
