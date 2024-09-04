@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:51 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 13:05:26 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:37:58 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ PhoneBook::PhoneBook() : _currentIndex(0), _totalContacts(0) {}
 
 PhoneBook::~PhoneBook() {}
 
-std::string get_valid_input(const std::string &prompt)
+std::string	get_valid_input(const std::string &prompt)
 {
 	std::string	input;
 
@@ -31,22 +31,22 @@ std::string get_valid_input(const std::string &prompt)
 	}
 }
 
-void PhoneBook::add()
+void	PhoneBook::add()
 {
-	std::string first_name = get_valid_input("Enter First Name: ");
-    std::string last_name = get_valid_input("Enter Last Name: ");
-    std::string nickname = get_valid_input("Enter Nickname: ");
-    std::string phone_number = get_valid_input("Enter Phone Number: ");
-    std::string darkest_secret = get_valid_input("Enter Darkest Secret: ");
+	std::string _firstName = get_valid_input("Enter First Name: ");
+    std::string _lastName = get_valid_input("Enter Last Name: ");
+    std::string _nickname = get_valid_input("Enter Nickname: ");
+    std::string _phoneNumber = get_valid_input("Enter Phone Number: ");
+    std::string _darkestSecret = get_valid_input("Enter Darkest Secret: ");
 
-	Contact new_contact(first_name, last_name, nickname, phone_number, darkest_secret);
+	Contact new_contact(_firstName, _lastName, _nickname, _phoneNumber, _darkestSecret);
 	_contacts[_currentIndex] = new_contact;
 	_currentIndex = (_currentIndex + 1) % 8;
 	if (_totalContacts < 8)
 		_totalContacts++;
 }
 
-void PhoneBook::search() const
+void	PhoneBook::search() const
 {
 	int			index;
 	std::string	input;
@@ -60,9 +60,9 @@ void PhoneBook::search() const
 	for (index = 0; index < _totalContacts; index++)
 	{
 		std::cout << "|" << std::setw(10) << index + 1 << "|"
-				<< std::setw(10) << _truncate(_contacts[index].get_first_name()) << "|"
-				<< std::setw(10) << _truncate(_contacts[index].get_last_name()) << "|"
-				<< std::setw(10) << _truncate(_contacts[index].get_nickname()) << "|" << std::endl;
+				<< std::setw(10) << _truncate(_contacts[index].getFirstName()) << "|"
+				<< std::setw(10) << _truncate(_contacts[index].getLastName()) << "|"
+				<< std::setw(10) << _truncate(_contacts[index].getNickname()) << "|" << std::endl;
 	}
 	if (_totalContacts > 0)
 	{
@@ -85,16 +85,16 @@ void PhoneBook::search() const
 	}
 }
 
-void PhoneBook::displayContact(int index) const
+void	PhoneBook::displayContact(int index) const
 {
-	std::cout << "First Name: " << _contacts[index].get_first_name() << std::endl
-			<< "Last Name: " << _contacts[index].get_last_name() << std::endl
-			<< "Nickname: " << _contacts[index].get_nickname() << std::endl
-			<< "Phone Number: " << _contacts[index].get_phone_number() << std::endl
-			<< "Darkest Secret: " << _contacts[index].get_darkest_secret() << std::endl;
+	std::cout << "First Name: " << _contacts[index].getFirstName() << std::endl
+			<< "Last Name: " << _contacts[index].getLastName() << std::endl
+			<< "Nickname: " << _contacts[index].getNickname() << std::endl
+			<< "Phone Number: " << _contacts[index].getPhoneNumber() << std::endl
+			<< "Darkest Secret: " << _contacts[index].getDarkestSecret() << std::endl;
 }
 
-std::string PhoneBook::_truncate(const std::string &str) const
+std::string	PhoneBook::_truncate(const std::string &str) const
 {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
