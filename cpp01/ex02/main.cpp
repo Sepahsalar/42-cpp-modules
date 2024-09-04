@@ -6,14 +6,14 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 23:15:24 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/04 23:43:30 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
-int	main()
+int	main(void)
 {
 	std::string string = "HI THIS IS BRAIN";
 	std::string *stringPTR = &string;
