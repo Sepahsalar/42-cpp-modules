@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:58 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 00:44:47 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/05 01:25:02 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 
 class Harl
 {
-public:
-	Harl();
-	~Harl();
+	public:
+		Harl();
+		~Harl();
 
-	void	complain(std::string level);
+		void	complain(std::string level);
 
-private:
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 };
 
 #endif
