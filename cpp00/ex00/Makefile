@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+         #
+#    By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 10:46:20 by asohrabi          #+#    #+#              #
-#    Updated: 2024/09/02 19:07:03 by asohrabi         ###   ########.fr        #
+#    Updated: 2024/09/05 17:11:32 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
