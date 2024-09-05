@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:59:29 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 18:33:34 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:55:33 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Fixed
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-		float	toFloat(void) const;
 		int		toInt(void) const;
+		float	toFloat(void) const;
 
 	private:
 		int					_value;
