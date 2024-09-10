@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/10 15:34:40 by asohrabi          #+#    #+#             */
+/*   Updated: 2024/09/10 18:44:55 by asohrabi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include "AAnimal.hpp"
+#include "Brain.hpp"
+
+class Dog : public AAnimal
+{
+	public:
+		Dog();
+		Dog(const Dog &other);
+		Dog		&operator=(const Dog &other);
+		~Dog();
+
+		void	makeSound() const override; //override?
+	
+	private:
+		Brain	*_brain;
+};
+
+#endif
