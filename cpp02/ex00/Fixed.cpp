@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:59:21 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 18:13:37 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-int	Fixed::getRawBits(void) const
+int	Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;

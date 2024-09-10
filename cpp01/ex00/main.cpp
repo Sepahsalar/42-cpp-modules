@@ -6,13 +6,13 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 01:41:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+int	main()
 {
 	Zombie	*zombie = newZombie("HeapZombie");
 

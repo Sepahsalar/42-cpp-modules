@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 13:42:47 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/06 16:15:42 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ScavTrap::attack(const std::string &target)
 	std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::guardGate(void)
+void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << _name << " has entered Gate Keeper mode!" << std::endl;
 }

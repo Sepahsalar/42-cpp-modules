@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:58 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 01:26:01 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class Harl
 		void	filter(std::string level);
 
 	private:
-		void	_debug(void);
-		void	_info(void);
-		void	_warning(void);
-		void	_error(void);
+		void	_debug();
+		void	_info();
+		void	_warning();
+		void	_error();
 
 		void	_handleLevel(std::string level);
 };

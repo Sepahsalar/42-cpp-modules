@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:03:55 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 00:30:42 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string	Replacer::_replaceOccurrences(const std::string &content) const
 	return result;
 }
 
-void Replacer::replaceAndSave(void) const
+void Replacer::replaceAndSave() const
 {
 	std::stringstream	buffer;
 	std::string			content;

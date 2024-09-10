@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:19:17 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/06 16:44:09 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap();
 
 		void		attack(const std::string &target);
-		void		whoAmI(void);
+		void		whoAmI();
 
 	private:
 		std::string	_name;

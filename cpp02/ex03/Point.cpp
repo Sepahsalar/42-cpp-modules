@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:57:32 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 20:54:33 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Point::Point(const Point &other) : x(other.x), y(other.y) {}
 
 Point	&Point::operator=(const Point &other)
 {
-	(void)other;
+	()other;
 	return *this;
 }
 

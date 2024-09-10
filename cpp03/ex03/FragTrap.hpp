@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 15:40:57 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/06 16:07:34 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 
 		void		attack(const std::string &target);
-		void		highFivesGuys(void);
+		void		highFivesGuys();
 };
 
 #endif

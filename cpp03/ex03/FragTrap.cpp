@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 15:41:07 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/06 16:15:38 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	FragTrap::attack(const std::string &target)
 	std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
-void	FragTrap::highFivesGuys(void)
+void	FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 }

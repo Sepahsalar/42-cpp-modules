@@ -6,14 +6,14 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:41:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 23:43:53 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
 
-int	main(void)
+int	main()
 {
 	PhoneBook	phonebook;
 	std::string	command;

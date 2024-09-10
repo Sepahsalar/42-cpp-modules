@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:03:52 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 00:09:16 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Replacer
 		Replacer(const std::string &filename
 			, const std::string &s1, const std::string &s2);
 		~Replacer();
-		void	replaceAndSave(void) const;
+		void	replaceAndSave() const;
 
 	private:
 		std::string _filename;

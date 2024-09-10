@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:53:26 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/03 21:17:56 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Account::~Account()
 		<< ";closed" << std::endl;
 }
 
-void Account::_displayTimestamp(void)
+void Account::_displayTimestamp()
 {
 	std::time_t	now = std::time(0);
 	std::tm		*localtm = std::localtime(&now);
@@ -51,27 +51,27 @@ void Account::_displayTimestamp(void)
 	std::cout << std::setw(2) << std::setfill('0') << localtm->tm_sec << "]";
 }
 
-int Account::getNbAccounts(void)
+int Account::getNbAccounts()
 {
 	return _nbAccounts;
 }
 
-int Account::getTotalAmount(void)
+int Account::getTotalAmount()
 {
 	return _totalAmount;
 }
 
-int Account::getNbDeposits(void)
+int Account::getNbDeposits()
 {
 	return _totalNbDeposits;
 }
 
-int Account::getNbWithdrawals(void)
+int Account::getNbWithdrawals()
 {
 	return _totalNbWithdrawals;
 }
 
-void Account::displayAccountsInfos(void)
+void Account::displayAccountsInfos()
 {
 	_displayTimestamp();
 	std::cout << " accounts:" << getNbAccounts() << ";total:" << getTotalAmount()
@@ -109,12 +109,12 @@ bool Account::makeWithdrawal(int withdrawal)
 	return true;
 }
 
-int Account::checkAmount(void) const
+int Account::checkAmount() const
 {
 	return _amount;
 }
 
-void Account::displayStatus(void) const
+void Account::displayStatus() const
 {
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex << ";amount:" << _amount
