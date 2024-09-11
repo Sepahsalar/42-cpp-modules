@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:37:51 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 19:37:58 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:12:35 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	PhoneBook::add()
     std::string _phoneNumber = get_valid_input("Enter Phone Number: ");
     std::string _darkestSecret = get_valid_input("Enter Darkest Secret: ");
 
-	Contact new_contact(_firstName, _lastName, _nickname, _phoneNumber, _darkestSecret);
+	Contact new_contact(_firstName, _lastName, _nickname, _phoneNumber
+						, _darkestSecret);
 	_contacts[_currentIndex] = new_contact;
 	_currentIndex = (_currentIndex + 1) % 8;
 	if (_totalContacts < 8)
@@ -76,9 +77,14 @@ void	PhoneBook::search() const
                 break;
             }
         }
-		std::stringstream ss(input);
-		if (valid && ss >> index && ss.eof()
-			&& index > 0 && index <= _totalContacts)
+		if (valid)
+		{
+			if (input.length() != 1)
+				valid = false;
+			else
+				index = std::stoi(input);
+		}
+		if (valid && index > 0 && index <= _totalContacts)
             displayContact(index - 1);
         else
             std::cout << "Error: Invalid index." << std::endl;
