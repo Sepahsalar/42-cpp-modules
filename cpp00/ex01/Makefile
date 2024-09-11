@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+         #
+#    By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 10:46:20 by asohrabi          #+#    #+#              #
-#    Updated: 2024/09/05 17:11:08 by asohrabi         ###   ########.fr        #
+#    Updated: 2024/09/11 11:18:18 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-FUNCS =  Contact.cpp PhoneBook.cpp main.cpp
+FUNCS = Contact.cpp PhoneBook.cpp main.cpp
 
 OBJS = ${FUNCS:.cpp=.o}
 
