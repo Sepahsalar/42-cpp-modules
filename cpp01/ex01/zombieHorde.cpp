@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:26:08 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 22:56:55 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:41:52 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ Zombie	*zombieHorde(int N, std::string name)
 {
 	if (N <= 0)
 	{
-		std::cerr << "Error: The number of zombies must be greater than zero." << std::endl;
+		std::cerr << "Error: The number of zombies must be greater than zero.";
+		std::cerr << std::endl;
 		return nullptr;
 	}
 	try

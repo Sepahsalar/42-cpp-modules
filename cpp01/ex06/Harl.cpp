@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:50 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:49:21 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl() {}
+
 Harl::~Harl() {}
 
 void	Harl::_debug()
@@ -41,34 +42,34 @@ void	Harl::_error()
 	std::cout << "I want to speak to the manager now." << std::endl;
 }
 
-void	Harl::_handleLevel(std::string level)
-{
-	if (level == "DEBUG")
-	{
-		this->_debug();
-		this->_info();
-		this->_warning();
-		this->_error();
-	} 
-	else if (level == "INFO")
-	{
-		this->_info();
-		this->_warning();
-		this->_error();
-	} 
-	else if (level == "WARNING")
-	{
-		this->_warning();
-		this->_error();
-	} 
-	else if (level == "ERROR")
-		this->_error(); 
-	else
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-}
-
 void	Harl::filter(std::string level)
 {
-	_handleLevel(level);
+	int log_level = 0;
+	
+	if (level == "DEBUG")
+		log_level = 1;
+	else if (level == "INFO")
+		log_level = 2;
+	else if (level == "WARNING")
+		log_level = 3;
+	else if (level == "ERROR")
+		log_level = 4;
+	else
+		log_level = 0;
+
+	switch (log_level)
+	{
+		case 1:
+			_debug();
+		case 2:
+			_info();
+		case 3:
+			_warning();
+		case 4:
+			_error();
+			break;
+		default:
+			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
 

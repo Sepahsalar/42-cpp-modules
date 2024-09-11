@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 23:28:51 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/04 23:39:44 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:03:57 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string &name, Weapon &weapon)
-	: name(name), weapon(weapon) {}
+HumanA::HumanA(const std::string &n, Weapon &w)
+	: name(n), weapon(w) {}
 
 HumanA::~HumanA() {}
 

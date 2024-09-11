@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:41 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:34:21 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ class Zombie
 	public:
 		Zombie(std::string n);
 		~Zombie();
-		void	announce();
+
+		void		announce();
 
 	private:
-		std::string name;
+		std::string	name;
 };
 
 Zombie	*newZombie(std::string name);

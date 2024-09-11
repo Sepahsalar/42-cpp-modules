@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:58 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:38:40 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Harl
 	public:
 		Harl();
 		~Harl();
+
 		void	filter(std::string level);
 
 	private:
@@ -28,8 +29,6 @@ class Harl
 		void	_info();
 		void	_warning();
 		void	_error();
-
-		void	_handleLevel(std::string level);
 };
 
 #endif

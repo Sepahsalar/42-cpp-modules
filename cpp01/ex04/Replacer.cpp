@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Replacer.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:03:55 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:17:42 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,22 @@ std::string	Replacer::_replaceOccurrences(const std::string &content) const
 	return result;
 }
 
-void Replacer::replaceAndSave() const
+void	Replacer::replaceAndSave() const
 {
 	std::stringstream	buffer;
 	std::string			content;
 	std::string			replacedContent;
-	
-	std::ifstream	inputFile(_filename.c_str());
+	std::ifstream		inputFile(_filename.c_str());
+
 	if (!inputFile.is_open())
 		_handleError("Error: Could not open file " + _filename);
 	buffer << inputFile.rdbuf();
 	content = buffer.str();
 	inputFile.close();
-
 	replacedContent = _replaceOccurrences(content);
-	std::ofstream outputFile((_filename + ".replace").c_str());
+
+	std::ofstream	outputFile((_filename + ".replace").c_str());
+
 	if (!outputFile.is_open())
 		_handleError("Error: Could not create file " + _filename + ".replace");
 	outputFile << replacedContent;

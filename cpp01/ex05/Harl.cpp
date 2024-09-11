@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:50 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:25:08 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	Harl::complain(std::string level)
         std::cout << "Invalid level: EMPTY" << std::endl;
         return;
     }
-
 	void	(Harl::*functions[])() =
 	{
 		&Harl::debug, 
@@ -57,8 +56,7 @@ void	Harl::complain(std::string level)
 		&Harl::warning, 
 		&Harl::error
 	};
-	
-	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+	std::string	levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	
 	for (int i = 0; i < 4; i++)
 	{

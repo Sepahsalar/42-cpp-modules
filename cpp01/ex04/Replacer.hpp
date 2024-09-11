@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Replacer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:03:52 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:12:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ class Replacer
 		Replacer(const std::string &filename
 			, const std::string &s1, const std::string &s2);
 		~Replacer();
-		void	replaceAndSave() const;
+	
+		void		replaceAndSave() const;
 
 	private:
-		std::string _filename;
-		std::string _s1;
-		std::string _s2;
+		std::string	_filename;
+		std::string	_s1;
+		std::string	_s2;
+
 		void		_handleError(const std::string &message) const;
 		std::string	_replaceOccurrences(const std::string &content) const;
 };

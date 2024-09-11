@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 01:40:53 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:19:23 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cerr << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
-		return EXIT_FAILURE;
+		return 1;
 	}
 	std::string	filename = argv[1];
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];
+	Replacer	replacer(filename, s1, s2);
 
-	Replacer replacer(filename, s1, s2);
 	replacer.replaceAndSave();
 
-	return EXIT_SUCCESS;
+	return 0;
 }

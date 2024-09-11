@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/10 16:07:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:52:16 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main()
 	std::cout << "Address -> by pointer  : " << stringPTR << std::endl;
 	std::cout << "Address -> by reference: " << &stringREF << std::endl;
 	
+	std::cout << std::endl;
 	std::cout << "Value of string        : " << string << std::endl;
 	std::cout << "Value -> by pointer    : " << *stringPTR << std::endl;
 	std::cout << "Value -> by reference  : " << stringREF << std::endl;
