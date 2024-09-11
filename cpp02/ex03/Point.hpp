@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: asohrabi <asohrabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:57:04 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/05 20:12:58 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:38:52 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define POINT_HPP
 
 #include "Fixed.hpp"
+#include <iostream>
 
 class Point
 {
