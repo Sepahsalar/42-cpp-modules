@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:34:50 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:14:59 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,32 +44,29 @@ void	Harl::_error()
 
 void	Harl::filter(std::string level)
 {
-	int log_level = 0;
-	
-	if (level == "DEBUG")
-		log_level = 1;
-	else if (level == "INFO")
-		log_level = 2;
-	else if (level == "WARNING")
-		log_level = 3;
-	else if (level == "ERROR")
-		log_level = 4;
-	else
-		log_level = 0;
+	const std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int					log_level = -1;
 
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i])
+		{
+			log_level = i;
+			break;
+		}
+	}
 	switch (log_level)
 	{
-		case 1:
+		case 0:
 			_debug();
-		case 2:
+		case 1:
 			_info();
-		case 3:
+		case 2:
 			_warning();
-		case 4:
+		case 3:
 			_error();
 			break;
 		default:
 			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
-
