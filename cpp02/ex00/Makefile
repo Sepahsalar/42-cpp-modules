@@ -6,11 +6,11 @@
 #    By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 10:46:20 by asohrabi          #+#    #+#              #
-#    Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr        #
+#    Updated: 2024/09/12 16:08:51 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ./fixed_point
+NAME = fixed_point
 
 FUNCS = Fixed.cpp main.cpp
 
