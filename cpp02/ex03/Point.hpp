@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:57:04 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/13 13:24:42 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/13 14:30:24 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Point
 		Point();
 		Point(const float x0, const float y0);
 		Point(const Point &other);
-		Point		&operator=(const Point &other);
+		Point		&operator=(const Point &);
 		~Point();
 
 		Fixed		getX() const;
