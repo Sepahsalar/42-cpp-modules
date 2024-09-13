@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:59:29 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:25:41 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ class Fixed
 		static const int	_fractionalBits = 8;
 };
 
-std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream				&operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
