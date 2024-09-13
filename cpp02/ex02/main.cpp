@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:22:16 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	main()
 {
 	Fixed		a;
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
-	Fixed const	c(42.42f);
-	Fixed		d(10);
 	
 	std::cout << "Original Tests:" << std::endl;
 	std::cout << a << std::endl;
@@ -29,6 +27,9 @@ int	main()
 	std::cout << Fixed::max(a, b) << std::endl;
 
 	std::cout << std::endl << "New Tests:" << std::endl;
+
+	Fixed const	c(42.42f);
+	Fixed		d(10);
 
 	std::cout << std::endl << "Arithmetic Operations:" << std::endl;
 	std::cout << "c + d: " << c + d << std::endl;
