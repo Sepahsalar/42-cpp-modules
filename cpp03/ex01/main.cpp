@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:32:18 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int	main()
 	scav1.attack("Target2");
 	scav1.takeDamage(40);
 	scav1.beRepaired(30);
+	std::cout << std::endl;
 	scav1.guardGate();
 
 	std::cout << std::endl << "--- Testing Energy Depletion in ScavTrap ---" << std::endl;
 	for (int i = 0; i < 50; ++i)
 		scav1.attack("EnergyDepletionTarget");
 
+	std::cout << std::endl;
 	return 0;
 }
