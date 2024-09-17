@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 13:42:58 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:48:40 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap();
