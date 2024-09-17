@@ -6,14 +6,14 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 12:49:08 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:15:48 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-	: _name("clapDefault"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+	: _name("Unnamed"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << _name << " created with default constructor." << std::endl;
 }
@@ -60,6 +60,7 @@ void	ClapTrap::attack(const std::string &target)
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing ";
 	std::cout << _attackDamage << " points of damage!" << std::endl;
+	std::cout << "** Current Energy Points: " << _energyPoints << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -88,4 +89,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	_hitPoints += amount;
 	std::cout << "ClapTrap " << _name << " repairs itself, gaining " << amount;
 	std::cout << " hit points! Hit points now: " << _hitPoints << std::endl;
+	std::cout << "** Current Energy Points: " << _energyPoints << std::endl;
 }
