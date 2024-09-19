@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:06:54 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,65 +17,55 @@
 
 int main()
 {
-	// Test 1: Basic usage with Ice and Cure
-	std::cout << "Test 1: Basic Materia Creation and Usage\n";
-	IMateriaSource *src = new MateriaSource();
+	std::cout << "Test 1: Basic Materia Creation and Usage" << std::endl;
+	IMateriaSource	*src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	ICharacter *me = new Character("me");
-
-	AMateria *tmp;
+	ICharacter	*me = new Character("me");
+	AMateria	*tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
-	ICharacter *bob = new Character("bob");
+	ICharacter	*bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
 
+	std::cout << std::endl;
+	std::cout << "Test 2: Creating Unknown Materia" << std::endl;
+	
+	tmp = src->createMateria("fire");
+	if (!tmp)
+		std::cout << "Cannot create Materia of type 'fire'!" << std::endl;
+	else
+		delete tmp;
+
+	std::cout << std::endl;
+
+	std::cout << "Test 3: Equip more than 4 Materias" << std::endl;
+	me->equip(new Ice());
+	me->equip(new Cure());
+	me->equip(new Cure());
+	std::cout << std::endl;
+
+	std::cout << "Test 4: Unequip Materia and Use Empty Slots" << std::endl;
+	me->unequip(0);
 	me->use(0, *bob);
 	me->use(1, *bob);
 
 	std::cout << std::endl;
 
-	// Test 2: Trying to create unknown Materia
-	std::cout << "Test 2: Creating Unknown Materia\n";
-	tmp = src->createMateria("fire");
-	if (!tmp)
-		std::cout << "Cannot create Materia of type 'fire'!\n";
+	std::cout << "Test 5: Deep Copy of Character" << std::endl;
+	Character	*cloneMe = new Character(*dynamic_cast<Character *>(me));
+	cloneMe->use(0, *bob);
+	cloneMe->use(1, *bob);
 
-	std::cout << std::endl;
-
-	// Test 3: Trying to equip more than 4 Materias
-	std::cout << "Test 3: Equip more than 4 Materias\n";
-	me->equip(new Ice()); // Slot 2
-	me->equip(new Cure()); // Slot 3
-	me->equip(new Cure()); // Extra, should not equip
-
-	std::cout << std::endl;
-
-	// Test 4: Unequip Materia and use empty slots
-	std::cout << "Test 4: Unequip Materia and Use Empty Slots\n";
-	me->unequip(0); // Unequip Ice from slot 0
-	me->use(0, *bob); // Try to use an empty slot
-	me->use(1, *bob); // Use Cure
-
-	std::cout << std::endl;
-
-	// Test 5: Deep copy of Character
-	std::cout << "Test 5: Deep Copy of Character\n";
-	Character *cloneMe = new Character(*dynamic_cast<Character *>(me)); // Deep copy me
-	cloneMe->use(0, *bob); // Empty slot (copied)
-	cloneMe->use(1, *bob); // Should work as Cure is in slot 1
-
-	std::cout << std::endl;
-
-	// Clean up
 	delete bob;
 	delete me;
 	delete cloneMe;
 	delete src;
 
-	std::cout << "All tests passed successfully!" << std::endl;
 	return 0;
 }

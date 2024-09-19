@@ -6,20 +6,22 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:27:16 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:16:53 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
+AMateria::AMateria() : _type("default") {}
+
 AMateria::AMateria(std::string const &type) : _type(type) {}
 
-AMateria::AMateria(AMateria const &src) : _type(src._type) {}
+AMateria::AMateria(AMateria const &other) : _type(other._type) {}
 
-AMateria	&AMateria::operator=(AMateria const &rhs)
+AMateria	&AMateria::operator=(AMateria const &other)
 {
-	if (this != &rhs)
-		_type = rhs._type;
+	if (this != &other)
+		_type = other._type;
 	return *this;
 }
 
@@ -32,5 +34,6 @@ std::string const	&AMateria::getType() const
 
 void	AMateria::use(ICharacter &target)
 {
-	(void)target;
+	std::cout << "* General use member function called for " << target.getName() << " *" << std::endl;
+	// (void)target;
 }

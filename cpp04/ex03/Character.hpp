@@ -6,15 +6,15 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:29:27 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:39:25 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Character.hpp
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 #include <iostream>
 
 class Character : public ICharacter
@@ -22,8 +22,8 @@ class Character : public ICharacter
 	public:
 		Character();
 		Character(std::string const &name);
-		Character(Character const &src);
-		Character			&operator=(Character const &rhs);
+		Character(Character const &other);
+		Character			&operator=(Character const &other);
 		~Character();
 
 		std::string const	&getName() const;

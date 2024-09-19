@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:30:04 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:18:39 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class MateriaSource : public IMateriaSource
 {
 	public:
 		MateriaSource();
-		MateriaSource(MateriaSource const &src);
-		MateriaSource	&operator=(MateriaSource const &rhs);
+		MateriaSource(MateriaSource const &other);
+		MateriaSource	&operator=(MateriaSource const &other);
 		~MateriaSource();
 
 		void			learnMateria(AMateria *m);

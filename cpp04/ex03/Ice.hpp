@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:27:57 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:45:58 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Ice : public AMateria
 {
 	public:
 		Ice();
-		Ice(Ice const &src);
-		Ice			&operator=(Ice const &rhs);
+		Ice(Ice const &other);
+		Ice			&operator=(Ice const &other);
 		~Ice();
 
 		AMateria	*clone() const;

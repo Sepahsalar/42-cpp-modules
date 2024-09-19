@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:30:16 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:53:08 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,27 @@ MateriaSource::MateriaSource()
 		_templates[i] = nullptr;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &src)
+MateriaSource::MateriaSource(MateriaSource const &other)
 {
 	for (int i = 0; i < 4; ++i)
 	{
-		if (src._templates[i])
-			_templates[i] = src._templates[i]->clone();
+		if (other._templates[i])
+			_templates[i] = other._templates[i]->clone();
 		else
 			_templates[i] = nullptr;
 	}
 }
 
-MateriaSource::~MateriaSource()
+MateriaSource	&MateriaSource::operator=(MateriaSource const &other)
 {
-	for (int i = 0; i < 4; ++i)
-		delete _templates[i];
-}
-
-MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
-{
-	if (this != &rhs)
+	if (this != &other)
 	{
 		for (int i = 0; i < 4; ++i)
 		{
-			delete _templates[i];
-			if (rhs._templates[i])
-				_templates[i] = rhs._templates[i]->clone();
+			if (_templates[i])
+				delete _templates[i];
+			if (other._templates[i])
+				_templates[i] = other._templates[i]->clone();
 			else
 				_templates[i] = nullptr;
 		}
@@ -51,16 +46,27 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
 	return *this;
 }
 
+MateriaSource::~MateriaSource()
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		if (_templates[i])
+			delete _templates[i];
+		_templates[i] = nullptr;
+	}
+}
+
 void	MateriaSource::learnMateria(AMateria *m)
 {
 	for (int i = 0; i < 4; ++i)
 	{
-		if (_templates[i] == nullptr)
+		if (!_templates[i])
 		{
 			_templates[i] = m;
-			break;
+			return;
 		}
 	}
+	delete m;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)
