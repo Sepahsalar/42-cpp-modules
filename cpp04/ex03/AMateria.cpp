@@ -6,11 +6,12 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:27:16 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/19 14:16:53 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:09:22 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria() : _type("default") {}
 
@@ -35,5 +36,4 @@ std::string const	&AMateria::getType() const
 void	AMateria::use(ICharacter &target)
 {
 	std::cout << "* General use member function called for " << target.getName() << " *" << std::endl;
-	// (void)target;
 }

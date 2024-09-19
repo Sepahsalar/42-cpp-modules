@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 18:13:26 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:35:05 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Brain::Brain(const Brain &other)
 Brain	&Brain::operator=(const Brain &other)
 {
 	if (this != &other)
-		for (int i = 0; i < 100; ++i)
+		for (int i = 0; i < 100; i++)
 			this->_ideas[i] = other._ideas[i];
 	std::cout << "Brain assigned" << std::endl;
 	return *this;

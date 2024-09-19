@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/19 13:32:02 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:36:11 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ int main()
 	std::cout << std::endl << "Testing array of AAnimals (Dog and Cat):" << std::endl;
 	std::cout << std::endl;
 	AAnimal	*animals[4];
-	for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 2; i++)
 		animals[i] = new Dog();
 	std::cout << std::endl;
-	for (int i = 2; i < 4; ++i)
+	for (int i = 2; i < 4; i++)
 		animals[i] = new Cat();
 	std::cout << std::endl;
-	for (int i = 0; i < 4; ++i)
+	for (int k = 0; k < 4; k++)
 	{
-		animals[i]->makeSound();
-		delete animals[i];
-		if (i != 3)
+		animals[k]->makeSound();
+		delete animals[k];
+		if (k != 3)
 			std::cout << std::endl;
 	}
 

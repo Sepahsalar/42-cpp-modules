@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:27:47 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/19 14:50:02 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:26:13 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ AMateria	*Ice::clone() const
 		std::cerr << "Error: "<< e.what() << std::endl;
 		return nullptr;
 	}
-	// return new Ice(*this);
 }
 
 void	Ice::use(ICharacter &target)

@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/11 17:18:39 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:35:25 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int main()
 
 	std::cout << std::endl << "-----Array tests-----" << std::endl;
 	Animal	*animals[4];
-	for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 2; i++)
 		animals[i] = new Dog();
 	std::cout << std::endl;
-	for (int j = 2; j < 4; ++j)
+	for (int j = 2; j < 4; j++)
 		animals[j] = new Cat();
 	std::cout << std::endl;
-	for (int k = 0; k < 4; ++k)
+	for (int k = 0; k < 4; k++)
 		delete animals[k];
 
 	std::cout << std::endl << "-----Copy tests-----" << std::endl;
