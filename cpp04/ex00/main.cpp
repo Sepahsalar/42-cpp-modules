@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/18 17:13:33 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:11:12 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 
+	std::cout << std::endl;
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
@@ -36,18 +37,19 @@ int main()
 	delete i;
 
 	std::cout << std::endl << "++++++++++++++++" << std::endl;
-	const WrongAnimal	*wrongMeta = new WrongAnimal();
 	const WrongAnimal	*wrongCat = new WrongCat();
+	const WrongCat		*justCat = new WrongCat();
 
 	std::cout << "****************" << std::endl;
 	std::cout << wrongCat->getType() << " " << std::endl;
 	wrongCat->makeSound();
-	std::cout << wrongMeta->getType() << " " << std::endl;
-	wrongMeta->makeSound();
+	std::cout << std::endl;
+	std::cout << justCat->getType() << " " << std::endl;
+	justCat->makeSound();
 
 	std::cout << "----------------" << std::endl;
-	delete wrongMeta;
 	delete wrongCat;
+	delete justCat;
 
 	return 0;
 }
