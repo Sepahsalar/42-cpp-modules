@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/20 13:29:11 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/23 12:08:59 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int main()
 		delete animals[k];
 
 	std::cout << std::endl << "-----Copy tests-----" << std::endl;
-	std::cout << std::endl;
 	Dog	dog1;
 	Dog	dog2 = dog1;
 	std::cout << std::endl;
