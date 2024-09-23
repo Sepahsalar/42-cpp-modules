@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:27:29 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/19 13:44:01 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/23 12:17:19 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AMateria
 		virtual void		use(ICharacter &target);
 
 	protected:
-		std::string _type;
+		std::string			_type;
 };
 
 #endif
