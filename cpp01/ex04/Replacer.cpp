@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 00:03:55 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/12 14:28:30 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:27:04 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,19 @@ void	Replacer::replaceAndSave() const
 	std::stringstream	buffer;
 	std::string			content;
 	std::string			replacedContent;
-	std::ifstream		inputFile(_filename.c_str());
+	std::ifstream		inputFile(_filename);
 
 	if (!inputFile.is_open())
-		_handleError("Error: Could not open: " + _filename);
+		_handleError("Error: Could not open: \"\"" + _filename);
 	buffer << inputFile.rdbuf();
 	content = buffer.str();
 	inputFile.close();
 	replacedContent = _replaceOccurrences(content);
 
-	std::ofstream	outputFile((_filename + ".replace").c_str());
+	std::ofstream	outputFile(_filename + ".replace");
 
 	if (!outputFile.is_open())
-		_handleError("Error: Could not create: " + _filename + ".replace");
+		_handleError("Error: Could not create: \"" + _filename + "\".replace");
 	outputFile << replacedContent;
 	outputFile.close();
 }
