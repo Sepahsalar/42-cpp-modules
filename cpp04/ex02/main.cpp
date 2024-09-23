@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 19:25:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2024/09/19 16:36:11 by asohrabi         ###   ########.fr       */
+/*   Updated: 2024/09/23 12:14:39 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int main()
 {
-	std::cout << "Testing Dog and Cat:" << std::endl;
-	std::cout << std::endl;
+	std::cout << "** Testing Dog and Cat:" << std::endl;
 	const AAnimal	*dog = new Dog();
 	const AAnimal	*cat = new Cat();
 
@@ -32,8 +31,7 @@ int main()
 	delete dog;
 	delete cat;
 
-	std::cout << std::endl << "Testing array of AAnimals (Dog and Cat):" << std::endl;
-	std::cout << std::endl;
+	std::cout << std::endl << "** Testing array of AAnimals (Dog and Cat):" << std::endl;
 	AAnimal	*animals[4];
 	for (int i = 0; i < 2; i++)
 		animals[i] = new Dog();
