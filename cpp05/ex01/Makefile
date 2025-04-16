@@ -6,7 +6,7 @@
 #    By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 21:07:14 by asohrabi          #+#    #+#              #
-#    Updated: 2025/04/16 16:47:21 by asohrabi         ###   ########.fr        #
+#    Updated: 2025/04/16 16:51:07 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FUNCS = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS = ${FUNCS:.cpp=.o}
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++17
+CFLAGS = -Wall -Wextra -Werror -std=c++17
 
 %.o: %.cpp
 	@c++ ${CFLAGS} -c $< -o $@
