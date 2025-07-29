@@ -15,32 +15,50 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main()
+int	main()
 {
 	try
 	{
-		Bureaucrat alice("Alice", 1);
-		Bureaucrat bob("Bob", 140);
+		Bureaucrat				alice("Alice", 1);
+		Bureaucrat				bob("Bob", 146);
+		Bureaucrat				tom("Tom", 75);
+		Bureaucrat				jerry("Jerry", 30);
 
-		ShrubberyCreationForm shrub("home");
-		RobotomyRequestForm robo("Marvin");
-		PresidentialPardonForm pardon("Ford");
+		ShrubberyCreationForm	shrub("Garden");
+		RobotomyRequestForm		robo("Marvin");
+		PresidentialPardonForm	pardon("Ford");
 
-		// Try signing forms
-		bob.signForm(shrub);
-		alice.signForm(shrub);
-		alice.signForm(robo);
-		alice.signForm(pardon);
+		std::cout << "--- Signing Forms ---" << std::endl;
+		bob.signForm(shrub);   // Should fail
+		alice.signForm(shrub); // Should succeed
+		tom.signForm(robo);    // Should fail
+		jerry.signForm(robo);  // Should succeed
+		jerry.signForm(pardon); // Should succeed
+		alice.signForm(pardon);// Should succeed
 
-		// Try executing forms
-		bob.executeForm(shrub); // Should fail if bob is too low
-		alice.executeForm(shrub);
-		alice.executeForm(robo);
-		alice.executeForm(pardon);
+		std::cout << std::endl << "--- Executing Forms ---" << std::endl;
+		bob.executeForm(shrub);    // Should fail (too low)
+		std::cout << std::endl;
+		alice.executeForm(shrub);  // Should succeed
+
+		std::cout << std::endl;
+		tom.executeForm(robo);     // Should fail (signed but low grade)
+		std::cout << std::endl;
+		jerry.executeForm(robo);   // Should succeed (50% success)
+
+		std::cout << std::endl;
+		jerry.executeForm(pardon); // Should fail (signed but grade too low)
+		std::cout << std::endl;
+		alice.executeForm(pardon); // Should succeed
+
+		std::cout << std::endl << "--- Executing Unsigned Form ---" << std::endl;
+		PresidentialPardonForm	unSignedForm("Zaphod");
+
+		alice.executeForm(unSignedForm); // Should throw NotSignedException
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Unexpected Exception: " << e.what() << std::endl;
 	}
 
 	return 0;

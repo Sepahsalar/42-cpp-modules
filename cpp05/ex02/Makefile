@@ -12,7 +12,8 @@
 
 NAME = bureaucrat_exec
 
-FUNCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+FUNCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 
 OBJS = ${FUNCS:.cpp=.o}
 
@@ -31,6 +32,7 @@ clean:
 
 fclean: clean
 	@rm -f ${NAME}
+	@rm -f *_shrubbery
 
 re: fclean all
 
