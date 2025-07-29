@@ -12,17 +12,17 @@
 
 #include "Bureaucrat.hpp"
 
-int main()
+int	main()
 {
 	try
 	{
-		Bureaucrat alice("Alice", 2);
+		Bureaucrat	alice("Alice", 2);
+
 		std::cout << alice << std::endl;
 
 		alice.incrementGrade();
 		std::cout << "After promotion: " << alice << std::endl;
 
-		// This will throw: GradeTooHigh
 		alice.incrementGrade();
 	}
 	catch (const std::exception &e)
@@ -34,13 +34,13 @@ int main()
 
 	try
 	{
-		Bureaucrat bob("Bob", 149);
+		Bureaucrat	bob("Bob", 149);
+
 		std::cout << bob << std::endl;
 
 		bob.decrementGrade();
 		std::cout << "After demotion: " << bob << std::endl;
 
-		// This will throw: GradeTooLow
 		bob.decrementGrade();
 	}
 	catch (const std::exception &e)
@@ -52,8 +52,7 @@ int main()
 
 	try
 	{
-		// Invalid grade, should throw at creation
-		Bureaucrat error("ErrorGuy", 0);
+		Bureaucrat	error("ErrorGuy", 0);
 	}
 	catch (const std::exception &e)
 	{
