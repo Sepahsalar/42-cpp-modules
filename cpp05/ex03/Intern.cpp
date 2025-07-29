@@ -14,37 +14,42 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
-
-// Define static creator functions
-static AForm *createShrubbery(const std::string &target)
-{
-	return new ShrubberyCreationForm(target);
-}
-
-static AForm *createRobotomy(const std::string &target)
-{
-	return new RobotomyRequestForm(target);
-}
-
-static AForm *createPresidential(const std::string &target)
-{
-	return new PresidentialPardonForm(target);
-}
 
 Intern::Intern() {}
+
 Intern::Intern(const Intern &) {}
-Intern &Intern::operator=(const Intern &) { return *this; }
+
+Intern	&Intern::operator=(const Intern &)
+{
+	return *this;
+}
+
 Intern::~Intern() {}
 
-AForm *Intern::makeForm(const std::string &formName, const std::string &target)
+
+static AForm	*createShrubbery(const std::string &target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+static AForm	*createRobotomy(const std::string &target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+static AForm	*createPresidential(const std::string &target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm	*Intern::makeForm(const std::string &formName, const std::string &target)
 {
 	const std::string names[] = {
 		"shrubbery creation",
 		"robotomy request",
 		"presidential pardon"};
 
-	typedef AForm *(*FormCreator)(const std::string &);
+
 	FormCreator creators[] = {
 		createShrubbery,
 		createRobotomy,
@@ -54,8 +59,18 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 	{
 		if (formName == names[i])
 		{
-			std::cout << "Intern creates " << formName << std::endl;
-			return creators[i](target);
+			try
+			{
+				AForm	*form = creators[i](target);
+
+				std::cout << "Intern creates " << formName << std::endl;
+				return form;
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << "Failed to create form: " << e.what() << std::endl;
+				return nullptr;
+			}
 		}
 	}
 

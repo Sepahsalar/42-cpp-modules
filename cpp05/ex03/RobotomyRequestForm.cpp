@@ -12,8 +12,12 @@
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-// #include <iostream>
 
+RobotomyRequestForm::RobotomyRequestForm()
+	: AForm("RobotomyRequestForm", 72, 45), _target("default")
+{
+	std::srand(std::time(nullptr));
+}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 	: AForm("RobotomyRequestForm", 72, 45), _target(target)
@@ -21,16 +25,25 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 	std::srand(std::time(nullptr));
 }
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
+	: AForm(other), _target(other._target) {}
+
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
+{
+	if (this != &other)
+	{
+		AForm::operator=(other);
+		_target = other._target;
+	}
+	return *this;
+}
+
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+void	RobotomyRequestForm::executeAction() const
 {
-	if (!isSigned())
-		throw AForm::NotSignedException();
-	if (executor.getGrade() > getGradeToExecute())
-		throw AForm::GradeTooLowException();
-
 	std::cout << "🔧 Bzzt... Vrrrrrr... 🔧\n";
+
 	if (std::rand() % 2)
 		std::cout << _target << " has been robotomized successfully!\n";
 	else

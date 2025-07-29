@@ -33,41 +33,69 @@ AForm::AForm(const AForm &other)
 AForm &AForm::operator=(const AForm &other)
 {
 	if (this != &other)
+	{
 		_isSigned = other._isSigned;
+		// _name, _gradeToSign, and _gradeToExecute are const, so we cannot assign them here.
+	}
 	return *this;
 }
 
 AForm::~AForm() {}
 
-const std::string &AForm::getName() const { return _name; }
-bool AForm::isSigned() const { return _isSigned; }
-int AForm::getGradeToSign() const { return _gradeToSign; }
-int AForm::getGradeToExecute() const { return _gradeToExecute; }
+const std::string	&AForm::getName() const
+{
+	return _name;
+}
 
-void AForm::beSigned(const Bureaucrat &bureaucrat)
+bool	AForm::getIsSigned() const
+{
+	return _isSigned;
+}
+
+int	AForm::getGradeToSign() const
+{
+	return _gradeToSign;
+}
+
+int	AForm::getGradeToExecute() const
+{
+	return _gradeToExecute;
+}
+
+void	AForm::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeToSign)
 		throw GradeTooLowException();
 	_isSigned = true;
 }
 
-const char *AForm::GradeTooHighException::what() const throw()
+void	AForm::execute(Bureaucrat const &executor) const
+{
+	if (!getIsSigned())
+		throw NotSignedException();
+	if (executor.getGrade() > getGradeToExecute())
+		throw GradeTooLowException();
+
+	executeAction();
+}
+
+const char	*AForm::GradeTooHighException::what() const noexcept
 {
 	return "Form grade is too high!";
 }
-const char *AForm::GradeTooLowException::what() const throw()
+const char	*AForm::GradeTooLowException::what() const noexcept
 {
 	return "Form grade is too low!";
 }
-const char *AForm::NotSignedException::what() const throw()
+const char	*AForm::NotSignedException::what() const noexcept
 {
 	return "Form is not signed!";
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm &form)
+std::ostream	&operator<<(std::ostream &out, const AForm &form)
 {
-	os << form.getName() << ", signed: " << std::boolalpha << form.isSigned()
-	   << ", grade to sign: " << form.getGradeToSign()
-	   << ", grade to execute: " << form.getGradeToExecute();
-	return os;
+	out << form.getName() << ", signed: " << std::boolalpha << form.getIsSigned()
+		<< ", grade to sign: " << form.getGradeToSign()
+		<< ", grade to execute: " << form.getGradeToExecute();
+	return out;
 }
