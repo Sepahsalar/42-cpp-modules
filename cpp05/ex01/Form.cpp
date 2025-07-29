@@ -28,40 +28,58 @@ Form::Form(const Form &other)
 	: _name(other._name), _isSigned(other._isSigned),
 	  _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
 
-Form &Form::operator=(const Form &other)
+Form	&Form::operator=(const Form &other)
 {
 	if (this != &other)
+	{
 		_isSigned = other._isSigned;
+		// _name, _gradeToSign, and _gradeToExecute are const, so we cannot assign them here.
+	}
 	return *this;
 }
 
 Form::~Form() {}
 
-const std::string &Form::getName() const { return _name; }
-bool Form::isSigned() const { return _isSigned; }
-int Form::getGradeToSign() const { return _gradeToSign; }
-int Form::getGradeToExecute() const { return _gradeToExecute; }
+const	std::string &Form::getName() const
+{
+	return _name;
+}
 
-void Form::beSigned(const Bureaucrat &bureaucrat)
+bool	Form::getIsSigned() const
+{
+	return _isSigned;
+}
+
+int	Form::getGradeToSign() const
+{
+	return _gradeToSign;
+}
+
+int	Form::getGradeToExecute() const
+{
+	return _gradeToExecute;
+}
+
+void	Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeToSign)
 		throw GradeTooLowException();
 	_isSigned = true;
 }
 
-const char *Form::GradeTooHighException::what() const noexcept
+const char	*Form::GradeTooHighException::what() const noexcept
 {
 	return "Form grade is too high!";
 }
 
-const char *Form::GradeTooLowException::what() const noexcept
+const char	*Form::GradeTooLowException::what() const noexcept
 {
 	return "Form grade is too low!";
 }
 
-std::ostream &operator<<(std::ostream &out, const Form &f)
+std::ostream	&operator<<(std::ostream &out, const Form &f)
 {
-	out << "Form '" << f.getName() << "', signed: " << std::boolalpha << f.isSigned()
+	out << "Form '" << f.getName() << "', signed: " << std::boolalpha << f.getIsSigned()
 		<< ", grade required to sign: " << f.getGradeToSign()
 		<< ", grade required to execute: " << f.getGradeToExecute() << ".";
 	return out;

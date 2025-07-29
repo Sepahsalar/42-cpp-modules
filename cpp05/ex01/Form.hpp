@@ -22,25 +22,24 @@ class Bureaucrat;
 class Form
 {
 private:
-	const std::string _name;
-	bool _isSigned;
-	const int _gradeToSign;
-	const int _gradeToExecute;
+	const std::string	_name;
+	bool				_isSigned;
+	const int			_gradeToSign;
+	const int			_gradeToExecute;
 
 public:
-	// Orthodox Canonical Form
 	Form();
 	Form(const std::string &name, int gradeToSign, int gradeToExecute);
 	Form(const Form &other);
-	Form &operator=(const Form &other);
+	Form				&operator=(const Form &other);
 	~Form();
 
-	const std::string &getName() const;
-	bool isSigned() const;
-	int getGradeToSign() const;
-	int getGradeToExecute() const;
+	const std::string	&getName() const;
+	bool				getIsSigned() const;
+	int					getGradeToSign() const;
+	int					getGradeToExecute() const;
 
-	void beSigned(const Bureaucrat &bureaucrat);
+	void				beSigned(const Bureaucrat &bureaucrat);
 
 	class GradeTooHighException : public std::exception
 	{
@@ -55,6 +54,6 @@ public:
 	};
 };
 
-std::ostream &operator<<(std::ostream &out, const Form &f);
+std::ostream			&operator<<(std::ostream &out, const Form &f);
 
 #endif

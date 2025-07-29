@@ -13,20 +13,21 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int main()
+int	main()
 {
 	try
 	{
-		Bureaucrat alice("Alice", 30);
-		Bureaucrat bob("Bob", 100);
+		Bureaucrat	alice("Alice", 30);
+		Bureaucrat	bob("Bob", 100);
 
-		Form leaveRequest("LeaveRequest", 50, 30);
+		Form		leaveRequest("LeaveRequest", 50, 30);
+
 		std::cout << leaveRequest << std::endl;
 
-		alice.signForm(leaveRequest); // should work
+		alice.signForm(leaveRequest);
 		std::cout << leaveRequest << std::endl;
 
-		bob.signForm(leaveRequest); // already signed
+		bob.signForm(leaveRequest);
 	}
 	catch (const std::exception &e)
 	{
@@ -37,7 +38,7 @@ int main()
 
 	try
 	{
-		Form invalidForm("InvalidForm", 0, 10); // should throw
+		Form	invalidForm("InvalidForm", 0, 10);
 	}
 	catch (const std::exception &e)
 	{
