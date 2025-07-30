@@ -6,13 +6,13 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:01:26 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 00:07:25 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 00:18:22 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
