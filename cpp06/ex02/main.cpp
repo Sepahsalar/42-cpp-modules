@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:43:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 13:31:54 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:35:27 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Base	*generate()
 				std::cout << "Generated: A" << std::endl;
 				obj = new A;
 				break;
-				// return new A;
 			case 1:
 				std::cout << "Generated: B" << std::endl;
 				obj = new B;
