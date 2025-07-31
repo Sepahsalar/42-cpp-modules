@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:11:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 12:48:20 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:50:01 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ int	main()
 
 	std::cout << "Serialized address: " << rawAnother << std::endl;
     printData(resultAnother, "Deserialized data");
-	checkPointerMatch(&another, resultAnother); // Should be okay
+	checkPointerMatch(&another, resultAnother);
 
 	std::cout << std::endl << "⚠️  Checking 'original' pointer match with 'another' deserialized result:" << std::endl;
-    checkPointerMatch(&original, resultAnother); // Should not match
+    checkPointerMatch(&original, resultAnother);
 
 	std::cout << std::endl << "🧪 Test 3: Serialize nullptr" << std::endl;
 	
