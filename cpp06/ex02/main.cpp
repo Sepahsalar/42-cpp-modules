@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:43:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 13:17:30 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:27:57 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,35 @@
 
 Base	*generate()
 {
+	Base	*obj = nullptr;
 	std::srand(std::time(nullptr));
 	int	r = std::rand() % 3;
 
-	switch (r)
+	try
 	{
-		case 0:
-			std::cout << "Generated: A" << std::endl;
-			return new A;
-		case 1:
-			std::cout << "Generated: B" << std::endl;
-			return new B;
-		default:
-			std::cout << "Generated: C" << std::endl;
-			return new C;
+		switch (r)
+		{
+			case 0:
+				std::cout << "Generated: A" << std::endl;
+				obj = new A;
+				break;
+				// return new A;
+			case 1:
+				std::cout << "Generated: B" << std::endl;
+				obj = new B;
+				break;
+			default:
+				std::cout << "Generated: C" << std::endl;
+				obj = new C;
+				break;
+		}
 	}
+	catch (const std::bad_alloc &e)
+	{
+		std::cerr << "Memory allocation failed: " << e.what() << std::endl;
+		return nullptr;
+	}
+	return obj;
 }
 
 void	identify(Base *p)
@@ -90,6 +104,12 @@ void	identify(Base &p)
 int	main()
 {
 	Base	*obj = generate();
+	
+	if (!obj)
+	{
+		std::cerr << "Failed to generate object." << std::endl;
+		return 1;
+	}
 
 	identify(obj);     // Pointer version
 	identify(*obj);    // Reference version
