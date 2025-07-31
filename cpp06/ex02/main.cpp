@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:43:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 01:00:54 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:17:30 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,59 +20,68 @@
 
 Base	*generate()
 {
-	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	std::srand(std::time(nullptr));
 	int	r = std::rand() % 3;
 
 	switch (r)
 	{
 		case 0:
-			std::cout << "Generated: A\n";
+			std::cout << "Generated: A" << std::endl;
 			return new A;
 		case 1:
-			std::cout << "Generated: B\n";
+			std::cout << "Generated: B" << std::endl;
 			return new B;
 		default:
-			std::cout << "Generated: C\n";
+			std::cout << "Generated: C" << std::endl;
 			return new C;
 	}
 }
 
 void	identify(Base *p)
 {
+	std::cout << "Type (ptr): ";
+	if (p == nullptr)
+	{
+		std::cout << "Null pointer" << std::endl;
+		return;
+	}
+
 	if (dynamic_cast<A*>(p))
-		std::cout << "Type (ptr): A" << std::endl;
+		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B*>(p))
-		std::cout << "Type (ptr): B" << std::endl;
+		std::cout << "B" << std::endl;
 	else if (dynamic_cast<C*>(p))
-		std::cout << "Type (ptr): C" << std::endl;
+		std::cout << "C" << std::endl;
 	else
-		std::cout << "Type (ptr): Unknown" << std::endl;
+		std::cout << "Unknown" << std::endl;
 }
 
 void	identify(Base &p)
 {
+	std::cout << "Type (ref): ";
+	
 	try
 	{
 		(void)dynamic_cast<A&>(p);
-		std::cout << "Type (ref): A" << std::endl;
+		std::cout << "A" << std::endl;
 	}
 	catch (...)
 	{
 		try
 		{
 			(void)dynamic_cast<B&>(p);
-			std::cout << "Type (ref): B" << std::endl;
+			std::cout << "B" << std::endl;
 		}
 		catch (...)
 		{
 			try
 			{
 				(void)dynamic_cast<C&>(p);
-				std::cout << "Type (ref): C" << std::endl;
+				std::cout << "C" << std::endl;
 			}
 			catch (...)
 			{
-				std::cout << "Type (ref): Unknown" << std::endl;
+				std::cout << "Unknown" << std::endl;
 			}
 		}
 	}

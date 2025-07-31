@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:43:04 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 00:44:12 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:01:30 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Base
 {
 	public:
-		virtual ~Base();  // Required for dynamic_cast
+		virtual ~Base();
 };
 
 #endif
