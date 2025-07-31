@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:11:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 12:50:01 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:59:50 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,12 @@ int	main()
 	
 	Data		*nullPtr = nullptr;
 	uintptr_t	nullRaw = Serializer::serialize(nullPtr);
+	Data		*deserializedNull = Serializer::deserialize(nullRaw);
 	
 	std::cout << "Serialized address: " << nullRaw << std::endl;
-
-	Data	*deserializedNull = Serializer::deserialize(nullRaw);
 	
 	printData(deserializedNull, "Deserialized from nullptr");
+	checkPointerMatch(nullPtr, deserializedNull);
 
 	return 0;
 }
