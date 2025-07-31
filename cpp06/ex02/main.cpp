@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:43:45 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 13:27:57 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:31:54 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <type_traits>
 
 Base	*generate()
 {
