@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 23:51:21 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 00:05:41 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:25:07 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,29 @@ static bool	isCharLiteral(const std::string &str)
 	return str.length() == 1 && !std::isdigit(str[0]);
 }
 
-// static bool	isFloatLiteral(const std::string &str)
-// {
-//     return str.find('f') != std::string::npos;
-// }
+static bool	isFloatLiteral(const std::string &str)
+{
+	return str.length() > 1 && str.back() == 'f' &&
+		str != "nanf" && str != "+inff" && str != "-inff" && str != "inff";
+}
 
 static bool	isPseudoLiteral(const std::string &str)
 {
 	return str == "nanf" || str == "+inff" || str == "-inff" ||
-		str == "nan"  || str == "+inf"  || str == "-inf";
+		str == "nan"  || str == "+inf"  || str == "-inf" ||
+		str == "inf" || str == "inff";
 }
 
 void	ScalarConverter::convert(const std::string &str)
 {
 	double value = 0.0;
 
-	// Handle char literal
+	if (str.empty())
+	{
+		std::cout << "Invalid input: '" << str << "'" << std::endl;
+		return;
+	}
+
 	if (isCharLiteral(str))
 	{
 		char c = str[0];
@@ -53,22 +60,32 @@ void	ScalarConverter::convert(const std::string &str)
 	{
 		if (str == "nanf" || str == "nan")
 			value = std::numeric_limits<float>::quiet_NaN();
-		else if (str == "+inff" || str == "+inf")
+		else if (str == "+inff" || str == "+inf" || str == "inff" || str == "inf")
 			value = std::numeric_limits<float>::infinity();
 		else if (str == "-inff" || str == "-inf")
 			value = -std::numeric_limits<float>::infinity();
 	}
+	else if (str.find("nan") != std::string::npos)
+	{
+		std::cout << "Invalid input: '" << str << "'" << std::endl;
+		return;
+	}
+
 	else
 	{
-		try
+		std::string	cleaned = str;
+
+		if (isFloatLiteral(str))
+			cleaned.pop_back();
+		
+		char	*end;
+
+		value = std::strtod(cleaned.c_str(), &end);
+		if (*end != '\0')
 		{
-			value = std::stod(str);
-		}
-		catch (...)
-		{
-			std::cout << "Invalid input: " << str << std::endl;
-			return ;
-		}
+			std::cout << "Invalid input: '" << str << "'" << std::endl;
+			return;
+		}	
 	}
 
 	// CHAR
@@ -84,7 +101,9 @@ void	ScalarConverter::convert(const std::string &str)
 	// INT
 	std::cout << "int: ";
 	
-	if (std::isnan(value) || value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
+	if (std::isnan(value)
+			|| value < std::numeric_limits<int>::min()
+			|| value > std::numeric_limits<int>::max())
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(value) << std::endl;
