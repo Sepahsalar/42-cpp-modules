@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:11:09 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 00:13:52 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:37:10 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 
 class Serializer
 {
-	public:
-		static uintptr_t	serialize(Data *ptr);
-		static Data			*deserialize(uintptr_t raw);
-
 	private:
 		Serializer();
 		~Serializer();
 		Serializer(const Serializer &);
 		Serializer 			&operator=(const Serializer &);
+	
+	public:
+		static uintptr_t	serialize(Data *ptr);
+		static Data			*deserialize(uintptr_t raw);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:11:36 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/07/31 00:40:40 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:48:20 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	printData(const Data* data, const std::string &label)
 		std::cout << label << " is nullptr" << std::endl;
 		return;
 	}
+
 	std::cout << label << ":" << std::endl;
 	std::cout << "  ID:    " << data->id << std::endl;
 	std::cout << "  Tag:   " << data->tag << std::endl;
@@ -76,6 +77,7 @@ int	main()
 	uintptr_t	raw = Serializer::serialize(&original);
 	Data		*result = Serializer::deserialize(raw);
 
+	std::cout << "Serialized address: " << raw << std::endl;
 	printData(result, "Deserialized data");
 	checkPointerMatch(&original, result);
 
@@ -85,15 +87,19 @@ int	main()
     uintptr_t	rawAnother = Serializer::serialize(&another);
     Data		*resultAnother = Serializer::deserialize(rawAnother);
 
-    printData(resultAnother, "Deserialized (different object)");
-    checkPointerMatch(&original, resultAnother);
+	std::cout << "Serialized address: " << rawAnother << std::endl;
+    printData(resultAnother, "Deserialized data");
+	checkPointerMatch(&another, resultAnother); // Should be okay
+
+	std::cout << std::endl << "⚠️  Checking 'original' pointer match with 'another' deserialized result:" << std::endl;
+    checkPointerMatch(&original, resultAnother); // Should not match
 
 	std::cout << std::endl << "🧪 Test 3: Serialize nullptr" << std::endl;
 	
 	Data		*nullPtr = nullptr;
 	uintptr_t	nullRaw = Serializer::serialize(nullPtr);
 	
-	std::cout << "Serialized nullptr: " << nullRaw << std::endl;
+	std::cout << "Serialized address: " << nullRaw << std::endl;
 
 	Data	*deserializedNull = Serializer::deserialize(nullRaw);
 	
