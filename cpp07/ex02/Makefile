@@ -6,15 +6,15 @@
 #    By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 21:07:14 by asohrabi          #+#    #+#              #
-#    Updated: 2025/08/01 13:22:38 by asohrabi         ###   ########.fr        #
+#    Updated: 2025/08/01 14:56:26 by asohrabi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = array
 
-FUNCS = main.cpp
+SRCS = main.cpp
 
-OBJS = ${FUNCS:.cpp=.o}
+OBJS = ${SRCS:.cpp=.o}
 
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 
