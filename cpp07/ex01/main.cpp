@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 13:06:05 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 13:07:21 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:15:58 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main()
 
 	std::cout << std::endl << "=== Strings ===" << std::endl;
 	iter(words, 2, addExclamation<std::string>);
+
+	std::cout << std::endl << "=== Empty array ===" << std::endl;
+    int	emptyArray[0];
+
+    iter(emptyArray, 0, increment<int>); // Should do nothing
 
 	return 0;
 }
