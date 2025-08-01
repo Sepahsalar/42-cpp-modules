@@ -6,9 +6,11 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 13:23:10 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 14:38:01 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 14:44:49 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Array.hpp"
 
 template <typename T>
 Array<T>::Array() : _data(nullptr), _size(0)
