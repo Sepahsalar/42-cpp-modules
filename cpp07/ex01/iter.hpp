@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:55:54 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 13:05:27 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:32:05 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <cstddef>
 
 template <typename T>
-void	iter(T* array, size_t length, void (*func)(T&))
+void	iter(T *array, size_t length, void (*func)(T&))
 {
 	if (!array || !func)
 		return ;
@@ -35,7 +35,7 @@ void	increment(T& value)
 }
 
 template <typename T>
-void	toUpper(T& value)
+void	toUpper(T &value)
 {
 	if (value >= 'a' && value <= 'z')
 		value -= 32;
@@ -44,7 +44,7 @@ void	toUpper(T& value)
 }
 
 template <typename T>
-void	addExclamation(T& value)
+void	addExclamation(T &value)
 {
 	value += "!";
 	std::cout << "Added !: " << value << std::endl;
