@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 13:22:48 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 14:53:55 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 15:01:15 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@
 
 #define MAX_VAL 750
 
-void	printArray(const Array<int> &arr, int maxPrint = 10)
+void	printArray(const Array<int> &arr)
 {
+	int	maxPrint = 10;
+	
+	if (arr.size() == 0)
+	{
+		std::cout << "Array is empty." << std::endl;
+		return;
+	}
 	std::cout << "Array contents (first " << maxPrint << " elements): ";
 	for (int i = 0; i < static_cast<int>(arr.size()) && i < maxPrint; ++i)
 	{
