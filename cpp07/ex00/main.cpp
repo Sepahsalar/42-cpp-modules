@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:36:22 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 12:45:32 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:06:31 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <string>
 #include "whatever.hpp"
 
-int main() {
+int	main()
+{
 	std::cout << "=== Test with integers ===" << std::endl;
 	int	a = 2;
 	int	b = 3;
