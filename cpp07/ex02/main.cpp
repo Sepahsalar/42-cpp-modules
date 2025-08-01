@@ -6,7 +6,7 @@
 /*   By: asohrabi <asohrabi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 13:22:48 by asohrabi          #+#    #+#             */
-/*   Updated: 2025/08/01 14:38:41 by asohrabi         ###   ########.fr       */
+/*   Updated: 2025/08/01 14:53:55 by asohrabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,10 @@ int	main()
 		numbers[i] = std::rand();
 	}
 	printArray(numbers);
+
+	std::cout << std::endl << "=== Testing const operator[] ===" << std::endl;
+	const Array<int>	constNumbers = numbers;
+	printArray(constNumbers);
 
 	std::cout << std::endl << "=== Testing default constructor (empty array) ===" << std::endl;
 	Array<int>	emptyArray;
